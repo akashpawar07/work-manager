@@ -13,7 +13,7 @@ export default function Page() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://work-manager-sigma.vercel.app/api/users/screenshots");
+                const response = await axios.get("/api/users/screenshots");
                 console.log("Fetching data: ", response.data);
                 setImages(response.data);
             } catch (error) {
@@ -75,12 +75,12 @@ export default function Page() {
                     <Image
                         src={selectedImage}
                         alt="Selected Image"
-                        width={900}
-                        height={500}
+                        height={200}
+                        width={600}
                         className="rounded-md"
                     />
                     <button
-                        className="absolute px-3 top-10 right-10 text-4xl font-bold cursor-pointer rounded-sm bg-red-700 border-2 border-none"
+                        className="absolute px-4 top-12 right-24 text-4xl font-bold cursor-pointer rounded-sm bg-red-700 border-2 border-none"
                         onClick={() => setOpenImage(false)}
                     >
                         &times;

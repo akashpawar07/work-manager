@@ -1,14 +1,12 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "buildCommand": "npx playwright install-deps && npm run dev:all"
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "buildCommand": "npx playwright install-deps && npm run dev:all"
+            }
         }
-      }
     ]
-  }
-  
-  
+}
