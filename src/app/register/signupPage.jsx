@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 
-export default function registerPage() {
+export default function SignupPage() {
   const [loading, setLoading] = useState(false);
   const router = useRouter()
   const [user, setUser] = React.useState({
