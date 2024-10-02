@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "dev:all": "concurrently \"npm run dev\" \"npm run screenshots\"",
-    "postinstall": "npx playwright install"
+    "postinstall": "npx playwright install",
+    "install-deps": "npx playwright install-deps"
+
 
   },
   "dependencies": {
