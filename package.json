@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "dev:all": "concurrently \"npm run dev\" \"npm run screenshots\""
-    
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
