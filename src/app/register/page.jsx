@@ -1,5 +1,5 @@
-import React from 'react'
-import UserSignupPage from '@/app/register/signupPage'
+import React from "react"
+import UserSignupPage from "@/app/register/SignupPage"
 export const metadata = {
     title: "Signup | Work Manager",
   };

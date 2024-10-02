@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-function addEmployee() {
+function AddProjects() {
   const [formData, setFormData] = useState({
     projectName: "",
     description: "",
@@ -124,4 +124,4 @@ function addEmployee() {
   )
 }
 
-export default addEmployee
+export default AddProjects

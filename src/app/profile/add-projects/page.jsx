@@ -1,5 +1,5 @@
 import React from "react"
-import AddProjects from "@/app/profile/add-projects/addProjects"
+import AddProjects from "@/app/profile/add-projects/AddProjects"
 export const metadata = {
     title: "Work Manager | Add Projects",
   };

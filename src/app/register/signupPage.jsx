@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 
 export default function registerPage() {
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
   const router = useRouter()
   const [user, setUser] = React.useState({
     username: "",
@@ -29,7 +29,7 @@ export default function registerPage() {
         return;
       }
 
-      const response = await axios.post('/api/users/register', user);
+      const response = await axios.post("/api/users/register", user);
       if (response.data.success === true) {
         router.push("/login");
         toast.success("Signup Successfull", { theme: "colored" });
@@ -65,7 +65,7 @@ export default function registerPage() {
 
       <div className="h-[90vh] md:py-6 w-screen md:w-[100%] md:h-[auto] flex flex-col justify-center items-center">
 
-        {/* <div className='w-full h-[70vh] md:p-2 md:w-[35%] md:h-[] md:mt-[5%] flex flex-col justify-center bg-orange-700'> */}
+    
 
           <h1 className="text-3xl text-center text-blue-600 font-bold m-5 md:mb-8">{loading ? "processing..." : "Signup"}</h1>
 
@@ -77,7 +77,7 @@ export default function registerPage() {
             <div className="w-[99%]  h-[100px] gap-2 flex flex-col justify-center items-center ">
 
               <div className=" w-[80%]">
-                <label htmlFor="username" className=''>Enter your name</label>
+                <label htmlFor="username" className="">Enter your name</label>
               </div>
               <div className=" w-[80%]">
                 <input
@@ -95,7 +95,7 @@ export default function registerPage() {
             <div className="w-[99%]  h-[100px] gap-2 flex flex-col justify-center items-center">
 
               <div className="w-[80%]">
-                <label htmlFor="email" className=''>Enter your email</label>
+                <label htmlFor="email" className="">Enter your email</label>
               </div>
               <div className="w-[80%]">
                 <input
@@ -141,7 +141,6 @@ export default function registerPage() {
 
           </form>
 
-        {/* </div> */}
       </div>
     </>
   )

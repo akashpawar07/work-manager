@@ -1,5 +1,5 @@
 import React from 'react'
-import PriofilePage from '@/app/profile/profilePage'
+import PriofilePage from '@/app/profile/ProfilePage'
 
 export const metadata = {
     title: "Work Manager | Home"
