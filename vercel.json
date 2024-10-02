@@ -1,12 +1,10 @@
+
+
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "buildCommand": "npx playwright install-deps && npm run dev:all"
-            }
-        }
-    ]
+  "build": {
+    "env": {
+      "PUPPETEER_EXECUTABLE_PATH": "/usr/bin/google-chrome",
+      "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
+    }
+  }
 }
