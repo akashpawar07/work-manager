@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "install-deps": "playwright install-deps",
     "dev:all": "concurrently \"npm run dev\" \"npm run screenshots\"",
     "dev": "next dev",
     "screenshots": "node scripts/screenshot.js",
     "build": "next build && node scripts/screenshot.js",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "npx playwright install"
+    "postinstall": "npx playwright install",
+    "install-deps": "install-system-dependencies --sudo libnss3 libnspr4 libgbm1"
   },
   "dependencies": {
     "@playwright/test": "^1.47.2",
     "@splinetool/react-spline": "^4.0.0",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
+    "chromium": "^3.0.3",
     "dotenv": "^16.4.5",
     "formik": "^2.4.6",
     "jsonwebtoken": "^9.0.2",
