@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client"
+
 import Link from "next/link";
 import Spline from '@splinetool/react-spline';
 import Footer from "@/components/Footer";
@@ -16,8 +17,8 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-6">
 
-          <Link href='/login' className="text-xl bg-blue-700 px-3 rounded-sm">Login</Link>
-          <Link href='/register' className="text-xl bg-green-700 px-3 rounded-sm">Signup</Link>
+          <Link href="/login" className="text-xl bg-blue-700 px-3 rounded-sm">Login</Link>
+          <Link href="/register" className="text-xl bg-green-700 px-3 rounded-sm">Signup</Link>
         </div>
 
       </div>
