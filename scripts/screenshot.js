@@ -45,7 +45,9 @@ async function takeScreenshot(page) {
 }
 
 async function startTakingScreenshots() {
-    const browser = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome',});
+    const browser = await puppeteer.launch({ 
+        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    });
     const page = await browser.newPage();
 
     await loadCookies(page);
