@@ -42,7 +42,7 @@ async function takeScreenshot() {
         'x-screenshot': 'true',
     });
 
-    await page.goto('http://localhost:3000/profile/show-projects');
+    await page.goto('https://work-manager-sigma.vercel.app/profile/show-projects');
 
     // Take screenshot and store as buffer
     const screenshotBuffer = await page.screenshot({ fullPage: true });
@@ -66,7 +66,7 @@ async function startTakingScreenshots() {
     while (true) {
         await takeScreenshot();
         console.log('Screenshot taken!');
-        await new Promise((resolve) => setTimeout(resolve, 5 * 60 * 1000)); // Wait for 10 minutes
+        await new Promise((resolve) => setTimeout(resolve, 1 * 60 * 1000)); // Wait for 10 minutes
     }
 }
 
