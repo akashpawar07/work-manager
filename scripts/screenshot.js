@@ -28,7 +28,7 @@ async function loadCookies(page) {
 
 async function takeScreenshot(page) {
 
-    await page.goto('http://localhost:3000/profile/show-projects',{fullPage :true}); // Navigate to the example.com webpage
+    await page.goto('https://vercel.com/akash-pawars-projects-db69e8ee',{fullPage :true}); // Navigate to the example.com webpage
 
     const screenshotBuffer = await page.screenshot({ fullPage: true });
 
