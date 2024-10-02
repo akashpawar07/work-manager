@@ -66,7 +66,7 @@ async function startTakingScreenshots() {
     while (true) {
         await takeScreenshot();
         console.log('Screenshot taken!');
-        await new Promise((resolve) => setTimeout(resolve, 3 * 60 * 1000)); // Wait for 10 minutes
+        await new Promise((resolve) => setTimeout(resolve, 5 * 60 * 1000)); // Wait for 10 minutes
     }
 }
 

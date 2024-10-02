@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "install-deps": "playwright install-deps",
+    "dev:all": "concurrently \"npm run dev\" \"npm run screenshots\"",
     "dev": "next dev",
     "screenshots": "node scripts/screenshot.js",
     "build": "next build && node scripts/screenshot.js",
     "start": "next start",
     "lint": "next lint",
-    "dev:all": "concurrently \"npm run dev\" \"npm run screenshots\"",
-    "postinstall": "npx playwright install",
-    "install-deps": "npx playwright install-deps"
+    "postinstall": "npx playwright install"
   },
   "dependencies": {
     "@playwright/test": "^1.47.2",
