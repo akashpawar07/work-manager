@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/nextjs')
+mongoose.connect('mongodb+srv://akashpawar:akashpawar@cluster0.1cuo7.mongodb.net/test')
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
