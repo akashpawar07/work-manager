@@ -1,11 +1,11 @@
 import React from "react"
-import AddProjects from "@/app/profile/add-projects/AddProjects"
+import AddProjects from "@/app/profile/add-projects/Add-Projects"
 export const metadata = {
     title: "Work Manager | Add Projects",
   };
   
 
-function AddProject() {
+function AddProjectsOfUser() {
   return (
     <>
       <AddProjects/>
@@ -13,4 +13,4 @@ function AddProject() {
   )
 }
 
-export default  AddProject
+export default AddProjectsOfUser

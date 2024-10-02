@@ -1,16 +1,16 @@
-import React from 'react'
-import PriofilePage from '@/app/profile/ProfilePage'
+import React from "react"
+import PriofilePage from "@/app/profile/Profile-Page"
 
 export const metadata = {
-    title: "Work Manager | Home"
+  title: "Work Manager | Home"
 }
 
-function Profile() {
+function UserProfilePage() {
   return (
     <>
-      <PriofilePage/>
+      <PriofilePage />
     </>
   )
 }
 
-export default Profile
+export default UserProfilePage
