@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 
 
-export default function shwoEmployee() {
+export default function shwoProjects() {
 
   const [data, setData] = useState([]);
 
@@ -44,7 +44,7 @@ export default function shwoEmployee() {
               const { projectName, description, submitionDate } = allProject
 
               return (
-                <div className='p-2 w-full flex flex-col gap-3 overflow-y-auto no-scrollbar h-auto rounded-md dark:text-white text-white bg-[#2d2c2d]'>
+                <div key={projectName} className='p-2 w-full flex flex-col gap-3 overflow-y-auto no-scrollbar h-auto rounded-md dark:text-white text-white bg-[#2d2c2d]'>
                   <div className='flex flex-col md:flex-row p-2 gap-6 justify-between'>
                     <div className='w-full md:w-[20%] text-center border-b-2 md:border-none p-2 md:p-0'>{projectName}</div>
                     <div className='w-full md:w-[80%]'>
@@ -66,4 +66,4 @@ export default function shwoEmployee() {
   )
 }
 
-// export default shwoEmployee
+

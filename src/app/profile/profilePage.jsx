@@ -15,7 +15,7 @@ function page() {
 
                 <div className='flex flex-col md:flex-row md:w-full md:h-auto p-2 '>
                     <div className='md:w-[55%] w-full'>
-                        <Image src={"/Iamge.svg"} width={500} height={500}></Image>
+                        <Image src={"/Iamge.svg"} width={500} height={500} alt='logo'></Image>
                     </div>
 
                     <div className='w-full mt-2 md:w-[45%] p-2 flex flex-col md:items-start md:justify-center '>
