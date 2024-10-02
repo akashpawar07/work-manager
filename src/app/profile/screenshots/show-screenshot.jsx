@@ -13,7 +13,7 @@ export default function Page() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("/api/users/screenshots");
+                const response = await axios.get("https://work-manager-sigma.vercel.app/api/users/screenshots");
                 console.log("Fetching data: ", response.data);
                 setImages(response.data);
             } catch (error) {

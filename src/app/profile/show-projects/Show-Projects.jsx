@@ -12,7 +12,7 @@ export default function ShowProjects() {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/users/projects")
+        const response = await axios.get("https://work-manager-sigma.vercel.app/api/users/projects")
         console.log("fetching data : ", response.data)
         setData(response.data)
 

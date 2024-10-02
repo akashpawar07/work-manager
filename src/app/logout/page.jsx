@@ -9,7 +9,7 @@ export default function LogoutUser(){
 
     const handleLogout = async () => {
         try {
-            const response = await axios.post("/api/logout")
+            const response = await axios.post("https://work-manager-sigma.vercel.app/api/logout")
 
             if (response.data.success === true) {
                 router.push('/');

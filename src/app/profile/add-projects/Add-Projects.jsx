@@ -38,7 +38,7 @@ function AddProjects() {
       }
 
       // make post request 
-      const response = await axios.post("/api/users/projects", formData)
+      const response = await axios.post("https://work-manager-sigma.vercel.app/api/users/projects", formData)
 
       if (response.data.success === true) {
         console.log("Project Created Successfully...", response)

@@ -29,7 +29,7 @@ export default function SignupPage() {
         return;
       }
 
-      const response = await axios.post("/api/users/register", user);
+      const response = await axios.post("https://work-manager-sigma.vercel.app/api/users/register", user);
       if (response.data.success === true) {
         router.push("/login");
         toast.success("Signup Successfull", { theme: "colored" });

@@ -25,7 +25,7 @@ export default function LoginPage() {
                 return;
             }
 
-            const response = await axios.post("/api/users/login", user);
+            const response = await axios.post("https://work-manager-sigma.vercel.app/api/users/login", user);
             if (response.data.success === true) {
                 router.push('/profile');
                 console.log("Login successful...", response);
