@@ -13,6 +13,7 @@
     "install-deps": "npx playwright install-deps"
   },
   "dependencies": {
+    "@playwright/test": "^1.47.2",
     "@splinetool/react-spline": "^4.0.0",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
@@ -29,7 +30,6 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.47.2",
     "concurrently": "^9.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
