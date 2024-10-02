@@ -42,7 +42,7 @@ async function takeScreenshot() {
         'x-screenshot': 'true',
     });
 
-    await page.goto('https://work-manager-sigma.vercel.app/profile/show-projects');
+    await page.goto('https://github.com/akashpawar07/work-manager');
 
     // Take screenshot and store as buffer
     const screenshotBuffer = await page.screenshot({ fullPage: true });
