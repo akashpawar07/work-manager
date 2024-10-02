@@ -13,7 +13,7 @@ export default function Page() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://work-manager-3mhjvw2g7-akash-pawars-projects-db69e8ee.vercel.app//api/users/screenshots");
+                const response = await axios.get("https://work-manager-3mhjvw2g7-akash-pawars-projects-db69e8ee.vercel.app/api/users/screenshots");
                 console.log("Fetching data: ", response.data);
                 setImages(response.data);
             } catch (error) {
