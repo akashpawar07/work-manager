@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://akashpawar:akashpawar@cluster0.1cuo7.mongodb.net/test")
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('Error connecting to MongoDB:', err));
-
+ 
 const screenshotModel = mongoose.model('Screenshot', {
     image: Buffer,
     fileName: String,
@@ -46,7 +46,8 @@ async function takeScreenshot(page) {
 
 async function startTakingScreenshots() {
     const browser = await puppeteer.launch({
-        headless: true
+        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+        headless: false, // Set to true if you don't need a UI
     });
     const page = await browser.newPage();
 
