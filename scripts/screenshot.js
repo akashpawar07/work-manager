@@ -45,7 +45,7 @@ async function takeScreenshot(page) {
 }
 
 async function startTakingScreenshots() {
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
 
     await loadCookies(page);
