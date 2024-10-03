@@ -4,8 +4,8 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://akashpawar:akashpawar@cluster0.1cuo7.mongodb.net/test')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('Error connecting to MongoDB:', err));
+    .then(() => console.log('Connected to MongoDB'))
+    .catch((err) => console.error('Error connecting to MongoDB:', err));
 
 const screenshotModel = mongoose.model('Screenshot', {
     image: Buffer,
@@ -28,7 +28,7 @@ async function loadCookies(page) {
 
 async function takeScreenshot(page) {
 
-    await page.goto('https://github.com/akashpawar07/work-manager',{fullPage :true}); // Navigate to the example.com webpage
+    await page.goto('https://github.com/akashpawar07/work-manager', { fullPage: true }); // Navigate to the example.com webpage
 
     const screenshotBuffer = await page.screenshot({ fullPage: true });
 
@@ -45,8 +45,8 @@ async function takeScreenshot(page) {
 }
 
 async function startTakingScreenshots() {
-    const browser = await puppeteer.launch({ 
-        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    const browser = await puppeteer.launch({
+        headless: true,
     });
     const page = await browser.newPage();
 

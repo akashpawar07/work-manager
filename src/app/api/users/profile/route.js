@@ -11,7 +11,7 @@ export async function GET(request) {
 
     } catch (error) {
 
-        console.log("failed to load users")
+        console.log("failed to load users...")
         return NextResponse.json({
             message: "failed to laod users",
             success: false
