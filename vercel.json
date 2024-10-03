@@ -2,8 +2,7 @@
 {
   "build": {
     "env": {
-      "PUPPETEER_EXECUTABLE_PATH": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-      "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "false",
+      "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true",
       "NODE_ENV": "production"
     }
   }
