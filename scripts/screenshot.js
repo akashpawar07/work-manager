@@ -47,7 +47,7 @@ async function takeScreenshot(page) {
 async function startTakingScreenshots() {
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        PUPPETEER_EXECUTABLE_PATH: "C:\\Users\\Akash Pawar\\.cache\\puppeteer\\chrome\\win64-129.0.6668.89\\chrome-win64\\chrome.exe"
     });
     const page = await browser.newPage();
 
