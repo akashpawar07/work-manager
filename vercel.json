@@ -2,9 +2,11 @@
 {
   "build": {
     "env": {
-
       "NODE_ENV": "production"
-      
+    },
+
+    "git": {
+      "ref": "main"
     }
   }
 }
