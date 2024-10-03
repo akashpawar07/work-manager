@@ -28,7 +28,7 @@ async function loadCookies(page) {
 
 async function takeScreenshot(page) {
 
-    await page.goto('https://github.com/akashpawar07/work-manager', { fullPage: true }); // Navigate to the example.com webpage
+    await page.goto('https://work-manager-lilac.vercel.app/profile/show-projects', { fullPage: true }); // Navigate to the example.com webpage
 
     const screenshotBuffer = await page.screenshot({ fullPage: true });
 
