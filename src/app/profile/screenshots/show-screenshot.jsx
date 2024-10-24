@@ -45,10 +45,11 @@ export default function Page() {
             <div
                 className={`relative w-full py-4 md:p-4 flex-wrap gap-6 flex items-center justify-center  ${openImage ? "blur-md" : ""}`}
             >
-                {images.map((ImageData) => {
+                {images.map((ImageData, index) => {
                     const { fileName, image } = ImageData;
                     const base64Image = Buffer.from(image).toString("base64");
                     const imageUrl = `data:image/png;base64,${base64Image}`;
+                    const indexOfImage = (index + 1).toString() // Convert to string if needed
 
                     return (
                         <div key={fileName} className="bg-gray-800 text-white flex justify-center items-center p-4 rounded-md">
@@ -62,7 +63,7 @@ export default function Page() {
                                     className="rounded-md cursor-pointer"
                                     onClick={() => handleImageClick(image, fileName)}
                                 />
-                                <p className="text-[14px]">{fileName}</p>
+                                <p className="text-[13px]">{indexOfImage}) {fileName}</p>
                             </div>
                         </div>
                     );

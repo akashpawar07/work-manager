@@ -1,10 +1,34 @@
 "use client"
 import React from "react"
+import axios from "axios"
 import Image from "next/image"
+import { useState, useEffect } from "react"
+import TimerContainer from '@/components/TimerContainer'
 
 
 
 function page() {
+
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("/api/users/projects")
+                console.log("fetching data : ", response.data)
+                setProjects(response.data)
+
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
+
+        fetchData()
+
+    }, [])
+
+
     return (
         <>
 
@@ -21,10 +45,26 @@ function page() {
                     <div className="w-full mt-2 md:w-[45%] p-2 flex flex-col md:items-start md:justify-center ">
                         <h1 className="text-xl font-bold">Overview</h1>
                         <p className="mt-4">
-                        Welcome to our work manager! Here, you can explore and showcase your projects effortlessly through three main pages: "Add New Project," "My Projects," and "Screenshots. <br /><br /> The "Add New Project" feature allows you to easily create and share your latest works, while the "My Projects" page serves you your all current projects. Additionally, our innovative screenshot functionality automatically captures your projects every 5 minutes, providing a real-time glimpse into your evolving work. Join us in crafting and sharing your creative journey seamlessly.
+                            Welcome to our work manager! Here, you can explore and showcase your projects effortlessly through three main pages: "Add New Project," "My Projects," and "Screenshots. <br /><br /> The "Add New Project" feature allows you to easily create and share your latest works, while the "My Projects" page serves you your all current projects. Additionally, our innovative screenshot functionality automatically captures your projects every 5 minutes, providing a real-time glimpse into your evolving work. Join us in crafting and sharing your creative journey seamlessly.
                         </p>
 
                     </div>
+                </div>
+
+                <h1 className="text-center text-3xl font-bold mt-10">Time Activity</h1>
+
+                <div className=" p-2 gap-4 flex flex-col">
+                    {projects.map((allProjects, index) => {
+                        const { projectName, _id } = allProjects
+                        const projectId = (index + 1).toString() // Convert to string if needed
+
+                        return (
+                            <div key={projectName}>
+                                <TimerContainer projectId={_id} projectName={projectName} />
+                               
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
+import TimerContainer from '@/components/TimerContainer'
 
 
 
@@ -61,7 +62,7 @@ export default function Navbar() {
                 <div className='absolute right-0 justify-evenly p-4 md:p-2 flex flex-col items-center
                  text-slate-900 bg-[#ffffff] right-100 z-[100] w-full md:h-[80vh] md:w-[22%] gap-12 shadow-md shadow-[#df7272] '
                 >
-                    <div className='flex p-4 rounded-full w-[95%] md:w-[99%] items-center justify-center shadow-inner shadow-[#141313] bg-[#232223a4] text-white cursor-pointer border-slate-900'>
+                    <div className='flex p-4 rounded-full w-[95%] md:w-[99%] items-center justify-center shadow-inner shadow-[#141313] bg-[#232223a4] text-white cursor-not-allowed border-slate-900'>
                         <h1 className='mr-2 font-bold'>Welcome Back ❤️</h1>
                     </div>
 

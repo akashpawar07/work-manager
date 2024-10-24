@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://akashpawar:akashpawar@cluster0.1cuo7.mongodb.net/test")
+mongoose.connect("mongodb://localhost:27017/nextjs")
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('Error connecting to MongoDB:', err));
  
@@ -28,26 +28,25 @@ async function loadCookies(page) {
 
 async function takeScreenshot(page) {
 
-    await page.goto('https://work-manager-lilac.vercel.app/profile/show-projects', { fullPage: true }); // Navigate to the example.com webpage
+    await page.goto('http://localhost:3000/profile/show-projects', { fullPage: true }); // Navigate to the example.com webpage
 
     const screenshotBuffer = await page.screenshot({ fullPage: true });
 
     // Convert Uint8Array to Buffer
     const buffer = Buffer.from(screenshotBuffer);
 
-    const timestamp = new Date().toISOString().replace(/:/g, '-');
+    const timestamp = new Date().toISOString().replace(/:/g, '-');  
     const screenshot = new screenshotModel({
         image: buffer,
         fileName: `Screenshot-${timestamp}.png`,
     });
     await screenshot.save();
-    console.log('Screenshot saved to database!');
+    console.log('Screenshot saved to database...!');
 }
 
 async function startTakingScreenshots() {
     const browser = await puppeteer.launch({
-        headless: true,
-        PUPPETEER_EXECUTABLE_PATH: "C:\\Users\\Akash Pawar\\.cache\\puppeteer\\chrome\\win64-129.0.6668.89\\chrome-win64\\chrome.exe",
+        headless: true
     });
     const page = await browser.newPage();
 
@@ -67,4 +66,4 @@ async function startTakingScreenshots() {
     }
 }
 
-startTakingScreenshots().catch(console.error);
+startTakingScreenshots().catch("error while atempting the screenshots...",console.error);

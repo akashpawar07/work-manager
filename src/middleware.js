@@ -12,8 +12,8 @@ export async function middleware(request) {
         } else {
             console.log('Allowing access to profile');
             return NextResponse.next();
-
         }
+        
     } catch (error) {
         console.error('Middleware Error:', error);
         return NextResponse.redirect(new URL('/error', request.url));
