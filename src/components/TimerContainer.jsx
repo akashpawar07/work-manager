@@ -8,11 +8,7 @@ const TimerContainer = ({ projectId, projectName }) => {
   const [dailyRecords, setDailyRecords] = useState({});
   const [lastActiveDay, setLastActiveDay] = useState(new Date().toISOString().split('T')[0]);
 
-  useEffect(() => {
-    loadData();
-  }, [projectId]);
-
-  const loadData = () => {
+  const loadData = useCallback(() => {
     const savedData = localStorage.getItem(`project_${projectId}`);
     if (savedData) {
       const { totalTimeToday, dailyRecords, lastActiveDay: savedLastActiveDay } = JSON.parse(savedData);
@@ -27,15 +23,19 @@ const TimerContainer = ({ projectId, projectName }) => {
       setDailyRecords(dailyRecords);
       setLastActiveDay(today);
     }
-  };
+  }, [projectId]); // Add projectId as dependency since it's used in the function
 
-  const saveData = () => {
+  useEffect(() => {
+    loadData();
+  }, [loadData]); // Update dependency to include loadData
+
+  const saveData = useCallback(() => {
     localStorage.setItem(`project_${projectId}`, JSON.stringify({
       totalTimeToday,
       dailyRecords,
       lastActiveDay
     }));
-  };
+  }, [projectId, totalTimeToday, dailyRecords, lastActiveDay]); // Add dependencies used in the function
 
   const handleStart = () => {
     setIsRunning(true);
@@ -75,6 +75,7 @@ const TimerContainer = ({ projectId, projectName }) => {
     const hours = Math.floor(minutes / 60);
     return `${hours.toString().padStart(2, '0')}:${(minutes % 60).toString().padStart(2, '0')}:${(seconds % 60).toString().padStart(2, '0')}`;
   };
+
 
   return (
     <div className='gap-2 flex w-full h-auto justify-center items-center'>

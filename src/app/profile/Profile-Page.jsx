@@ -7,7 +7,7 @@ import TimerContainer from '@/components/TimerContainer'
 
 
 
-function page() {
+function Page() {
 
     const [projects, setProjects] = useState([]);
 
@@ -70,5 +70,5 @@ function page() {
     )
 }
 
-export default page
+export default Page
 
