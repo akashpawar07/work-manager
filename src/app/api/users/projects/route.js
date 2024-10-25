@@ -5,8 +5,7 @@ import { connect } from "@/dbConfig/database"
 //database
 connect()
 
-
-// Create employee
+// Create Project
 export async function POST(request) {
 
     try {
@@ -20,21 +19,21 @@ export async function POST(request) {
             return NextResponse.json({message: "All fields are required", success : false})
         }
 
-        // check is employee is already exists or not
+        // check is Project is already exists or not
         const isProjectExist = await projectModels.findOne({ projectName })
         if (isProjectExist) {
             console.log("project already exists....")
             return NextResponse.json({ message: "Project already exists", success: false })
         }
 
-        // create employee 
+        // create Project 
         const project = await projectModels.create({
             projectName,
             description,
             submitionDate
         })
 
-        //save employee to database
+        //save Project to database
         const createdProject = await project.save();
         console.log("Project Created successfully...", createdProject);
 
@@ -54,7 +53,7 @@ export async function POST(request) {
 
 }
 
-// get all users from employees table present in database
+// get all Project from projects table present in database
 export async function GET(request) {
 
     const allProject = [];
@@ -63,14 +62,14 @@ export async function GET(request) {
         const allProject = await projectModels.find();
 
         return NextResponse.json(allProject, {
-            message: "Got the Employee ",
+            message: "Got the all Project ",
             success: true
         }, { status: 201 })
 
     } catch (error) {
-        console.log("Failed to load Employee.... ", error.message)
+        console.log("Failed to load Project.... ", error.message)
         return NextResponse.json({
-            message: "Failed to load Employee",
+            message: "Failed to load Project",
             success: false
         })
     }

@@ -56,12 +56,10 @@ function page() {
                 <div className=" p-2 gap-4 flex flex-col">
                     {projects.map((allProjects, index) => {
                         const { projectName, _id } = allProjects
-                        const projectId = (index + 1).toString() // Convert to string if needed
 
                         return (
                             <div key={projectName}>
                                 <TimerContainer projectId={_id} projectName={projectName} />
-                               
                             </div>
                         )
                     })}

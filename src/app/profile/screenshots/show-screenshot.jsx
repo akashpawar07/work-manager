@@ -76,12 +76,12 @@ export default function Page() {
                     <Image
                         src={selectedImage}
                         alt="Selected Image"
-                        height={200}
-                        width={600}
+                        height={800}
+                        width={1000}
                         className="rounded-md"
                     />
                     <button
-                        className="absolute px-4 top-12 right-24 text-4xl font-bold cursor-pointer rounded-sm bg-red-700 border-2 border-none"
+                        className="absolute px-4 top-12 right-10 text-4xl font-bold cursor-pointer rounded-sm bg-[#ff4d32] border-2 border-none"
                         onClick={() => setOpenImage(false)}
                     >
                         &times;

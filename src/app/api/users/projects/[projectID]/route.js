@@ -37,60 +37,60 @@ export async function GET(request, { params }) {
 }
 
 
-// update the employe
-export async function PUT(request, { params }) {
+// update the project
+// export async function PUT(request, { params }) {
 
-    const { projectID } = params
-    const { projectName, description, submitionDate } = await request.json()
+//     const { projectID } = params
+//     const { projectName, description, submitionDate } = await request.json()
 
-    try {
+//     try {
 
-        const updateProject = await projectModel.findById(projectID)
+//         const updateProject = await projectModel.findById(projectID)
 
-            updateProject.projectName = projectName,
-            updateProject.description = description,
-            updateProject.submitionDate = submitionDate
+//             updateProject.projectName = projectName,
+//             updateProject.description = description,
+//             updateProject.submitionDate = submitionDate
 
-        await updateProject.save()
+//         await updateProject.save()
 
-        return NextResponse.json({
-            message: "Project details updated successfully",
-            success: true
-        }, { status: 201 })
+//         return NextResponse.json({
+//             message: "Project details updated successfully",
+//             success: true
+//         }, { status: 201 })
 
-    } catch (error) {
-        console.log("Failed to update project details....");
-        return NextResponse.json({
-            message: "Failed to update project details",
-            success: false
-        })
-    }
+//     } catch (error) {
+//         console.log("Failed to update project details....");
+//         return NextResponse.json({
+//             message: "Failed to update project details",
+//             success: false
+//         })
+//     }
 
-}
+// }
 
 
 // Delete the employee
-export async function DELETE(request, { params }) {
+// export async function DELETE(request, { params }) {
 
-    const { projectID } = params
+//     const { projectID } = params
 
-    try {
-        await projectModel.deleteOne({
-            _id: projectID
-        })
+//     try {
+//         await projectModel.deleteOne({
+//             _id: projectID
+//         })
 
-        console.log("Project deleted successfully....")
-        return NextResponse.json({
-            message: "Project Deleted Successfully",
-            success: true
-        }, { status: 201 })
+//         console.log("Project deleted successfully....")
+//         return NextResponse.json({
+//             message: "Project Deleted Successfully",
+//             success: true
+//         }, { status: 201 })
 
-    } catch (error) {
-        console.log("Failed to deleted Project....", error.message)
-        return NextResponse.json({
-            message: "Failed to deleted Project",
-            success: false
-        })
-    }
+//     } catch (error) {
+//         console.log("Failed to deleted Project....", error.message)
+//         return NextResponse.json({
+//             message: "Failed to deleted Project",
+//             success: false
+//         })
+//     }
 
-}
+// }
